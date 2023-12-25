@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Edit Pokemon</h1>
+    <form action="/pokemon/<%= id %>?_method=PUT" method="post">
+      <label for="id"
+        >Id:<input type="text" name="id" value="<%=poke.id%>" readonly
+      /></label>
+      <label for="name"
+        >Name:<input type="text" name="name" value="<%=poke.name%>"
+      /></label>
+      <label for="image"
+        >Image:<input type="text" name="image" value="<%=poke.img%>"
+      /></label>
+      <label for="type"
+        >Type:<input type="text" name="type" value="<%=poke.type%>"
+      /></label>
+      <input type="submit" value="Update pokemon" />
+    </form>
+  </body>
+</html>
