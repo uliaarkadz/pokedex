@@ -4,17 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
-    <h1>Create new pokemon</h1>
-    <form action="/pokemon" method="post">
-      <label for="id"
-        >Id:<input type="text" name="id" value="<%=newId%>" readonly
-      /></label>
-      <label for="name">Name:<input type="text" name="name" /></label>
-      <label for="image">Image:<input type="text" name="image" /></label>
-      <label for="type">Type:<input type="text" name="type" /></label>
-      <input type="submit" value="Create new pokemon" />
+    <div class="nav">
+      <h1>CREATE NEW POKEMON</h1>
+      <a href="/pokemon">Back to Index</a>
+    </div>
+
+    <form class="pokemon" action="/pokemon" method="post">
+      <fieldset>
+        <label for="id"
+          >Id:
+          <input type="text" name="id" value="<%=newId%>" readonly /></label
+        ><br />
+        <label for="name">Name: <input type="text" name="name" /></label><br />
+        <label for="image">Image: <input type="text" name="image" /></label
+        ><br />
+        <label for="type">Type: <input type="text" name="type" /></label>
+      </fieldset>
+      <div class="save"><input type="submit" value="Create new pokemon" /></div>
     </form>
   </body>
 </html>

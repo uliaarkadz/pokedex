@@ -4,26 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
-    <a href="/pokemon">Back to Index</a>
-    <a href="/pokemon/new">Add a pokemon</a>
-    <h1>Pokemon detail page</h1>
-    <h2><%= poke.name %></h2>
-    <img src="<%= poke.img %>" alt="" />
-    <h3>
-      <ul>
-        <% for( let i = 0; i < poke.type.length; i++) { %>
-        <li><%= poke.type[i]%></li>
-        <% } %>
-      </ul>
-    </h3>
-    <h3>
-      <ul>
-        <% for( let prop in poke.stats) {%>
-        <li><%= prop%>: <%= poke.stats[prop]%></li>
-        <% } %>
-      </ul>
-    </h3>
+    <div class="nav">
+      <h1>Pokemon detail page</h1>
+      <a href="/pokemon">Back to Index</a>
+      <a href="/pokemon/new">Add a pokemon</a>
+    </div>
+    <div id="detail">
+      <div id="name">
+        <h2><%= poke.name %></h2>
+        <img src="<%= poke.img %>" alt="" />
+      </div>
+      <div class="type">
+        <h3>
+          <ul>
+            Type <% for( let i = 0; i < poke.type.length; i++) { %>
+            <li><%= poke.type[i]%></li>
+            <% } %>
+          </ul>
+        </h3>
+      </div>
+
+      <div class="type">
+        <h3>
+          <ul>
+            Stats <% for( let prop in poke.stats) {%>
+            <li><%= prop%>: <%= poke.stats[prop]%></li>
+            <% } %>
+          </ul>
+        </h3>
+      </div>
+    </div>
   </body>
 </html>

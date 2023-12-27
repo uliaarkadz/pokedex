@@ -7,20 +7,25 @@
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
-    <h1>ALL POKEMONS</h1>
-    <a href="/pokemon/new">Add a pokemon</a>
+    <div id="top">
+      <h1>LIST OF POKEMONS</h1>
+      <a href="/pokemon/new">Add a pokemon</a>
+    </div>
     <div id="main">
       <% for (let i = 0; i < pokemon.length; i++){ %>
       <div id="item">
-        div<%= pokemon[i].name %>
-        <a href="/pokemon/<%= i %>"
-          ><img src="<%= pokemon[i].img %>" alt=""
-        /></a>
-        <a href="/pokemon/<%= i %>/edit">Edit</a>
-
-        <form action="/pokemon/<%= i %>?_method=DELETE" method="post">
-          <input type="submit" value="delete" />
-        </form>
+        <div id="name"><%= pokemon[i].name %></div>
+        <div id="pokemonimage">
+          <a href="/pokemon/<%= i %>"
+            ><img src="<%= pokemon[i].img %>" alt=""
+          /></a>
+        </div>
+        <div id="edit"><a href="/pokemon/<%= i %>/edit">Edit</a></div>
+        <div id="delete">
+          <form action="/pokemon/<%= i %>?_method=DELETE" method="post">
+            <input type="submit" value="Delete" />
+          </form>
+        </div>
       </div>
       <% } %>
     </div>
