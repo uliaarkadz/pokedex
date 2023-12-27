@@ -9,6 +9,7 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 app.use(methodOverride("_method"));
+app.use(express.static("public"));
 //app.use("/pokemon", pokemonRouter);
 // /**
 //  * INDEX ROUTE
@@ -63,9 +64,20 @@ app.put("/pokemon/:id", (req, res) => {
 //  * DELETE ROUTE
 //  */
 
+app.delete("/pokemon/:id", (req, res) => {
+  const id = req.params.id;
+  pokemon.splice(id, 1);
+  res.redirect("/pokemon");
+});
+
 // /**
 //  * SHOW ROUTE
 //  */
+app.get("/pokemon/:id", (req, res) => {
+  const id = req.params.id;
+  const poke = pokemon[id];
+  res.render("./pokemon/show.ejs", { poke, id });
+});
 
 /**
  * LISTENER

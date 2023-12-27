@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="/pokemon">Back to Index</a>
+    <a href="/pokemon/new">Add a pokemon</a>
+    <h1>Pokemon detail page</h1>
+    <h2><%= poke.name %></h2>
+    <img src="<%= poke.img %>" alt="" />
+    <h3>
+      <ul>
+        <% for( let i = 0; i < poke.type.length; i++) { %>
+        <li><%= poke.type[i]%></li>
+        <% } %>
+      </ul>
+    </h3>
+    <h3>
+      <ul>
+        <% for( let prop in poke.stats) {%>
+        <li><%= prop%>: <%= poke.stats[prop]%></li>
+        <% } %>
+      </ul>
+    </h3>
+  </body>
+</html>

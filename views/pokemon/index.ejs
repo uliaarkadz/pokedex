@@ -4,18 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
     <h1>ALL POKEMONS</h1>
     <a href="/pokemon/new">Add a pokemon</a>
-    <ul>
-      <% for (let i = 0; i < pokemon.length; i++){ %> <%= pokemon[i].name %>
-      <a href="/pokemon/<%= i %>"><img src="<%= pokemon[i].img %>" alt="" /></a>
-      <a href="/pokemon/<%= i %>/edit">Edit</a>
-      <form action="/pokemon/<%= i %>?method=DELETE" method="post">
-        <input type="submit" value="delete" />
-      </form>
+    <div id="main">
+      <% for (let i = 0; i < pokemon.length; i++){ %>
+      <div id="item">
+        div<%= pokemon[i].name %>
+        <a href="/pokemon/<%= i %>"
+          ><img src="<%= pokemon[i].img %>" alt=""
+        /></a>
+        <a href="/pokemon/<%= i %>/edit">Edit</a>
+
+        <form action="/pokemon/<%= i %>?_method=DELETE" method="post">
+          <input type="submit" value="delete" />
+        </form>
+      </div>
       <% } %>
-    </ul>
+    </div>
   </body>
 </html>
